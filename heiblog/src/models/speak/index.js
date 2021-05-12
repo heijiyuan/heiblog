@@ -1,4 +1,4 @@
-const home = {
+const speak = {
     state: {
         count:1
     }, // initial state
@@ -17,4 +17,4 @@ const home = {
       }
     }
   };
-  export default home;
+  export default speak ;

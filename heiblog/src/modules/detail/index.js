@@ -1,15 +1,14 @@
-// import { useEffect } from "react";
 import { connect } from "react-redux";
 import { Layout,Breadcrumb,Menu } from 'antd';
 import Nav from '../component/nav/index';
 import  { useEffect } from "react";
 const { Header, Content, Footer } = Layout;
-const  Aboutme = (props) => {
+const  Detail = (props) => {
     const {count,setSelected} = props
     console.log(count); 
-    useEffect(()=>{
-      setSelected(['3'])
-    },[]) 
+    // useEffect(()=>{
+    //   setSelected(null)
+    // },[]) 
     
     const handleClick = e => {
         console.log('click ', e);
@@ -17,7 +16,7 @@ const  Aboutme = (props) => {
    return (
     <Layout>
     <Header  style={{ position: 'fixed', zIndex: 1, width: '100%'}}>
-       <Nav  ></Nav>
+       <Nav></Nav>
      </Header>   
     <Content className="site-layout" >
     </Content>
@@ -35,6 +34,6 @@ const mapState = (state) => ({
     setSelected: dispatch.common.setSelected
   });
   
-  const aboutme = connect(mapState, mapDispatch)(Aboutme);
+  const Details = connect(mapState, mapDispatch)(Detail);
 
-export default aboutme;
+export default Details;
