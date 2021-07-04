@@ -78,7 +78,7 @@ const home = (props) => {
     }
    return (
      <>
-    <Layout>
+  <Layout style={{height:"200vh"}}>
      <Header  style={{ position: 'fixed', zIndex: 1, width: '100%'}}>
        <Nav ></Nav>
      </Header>   
