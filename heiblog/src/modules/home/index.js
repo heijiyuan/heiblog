@@ -1,111 +1,75 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
-import { Layout,Timeline,BackTop} from 'antd';
+import { Layout,BackTop,Spin} from 'antd';
 import Nav from '../component/nav/index'
 import './home.css';
 import Swiper from '../component/swiper/index';
-import { ArrowUpOutlined } from '@ant-design/icons';
-const { Header, Content, Footer } = Layout;
-const home = (props) => {
-    const {count} = props
-    console.log(props.history.location.pathname);  
-    const handleClick = () => {
-        console.log('click ',props.history);
-        props.history.push('./detail');
-      };
-    const configs = [
-                      {
-                        id:1,
-                        text:"Create a services site 2015-09-01",
-                        color:"blue"
-                      },
-                      {
-                        id:2,
-                        text:"Create a services site 2015-09-01",
-                        color:"blue"
-                      },
-                      {
-                        id:3,
-                        text:"Create a services site 2015-09-01",
-                        color:"green"
-                      },
-                      {
-                        id:4,
-                        text:"Create a services site 2015-09-01",
-                        color:"green"
-                      },
-                      {
-                        id:5,
-                        text:"Create a services site 2015-09-01",
-                        color:"red"
-                      },
-                      {
-                        id:6,
-                        text:"Create a services site 2015-09-01",
-                        color:"red"
-                      }
-                     
-                    ]
-       const Items = (configs)=>{  
-        return(
-          configs.map((item,index)=>{
-            return(
-            <div  key={item.id}  style={{   width:'98vw'}}>
-             <Timeline.Item color={item.color}>             
-                 <div onClick={handleClick}  className='timeline'>{item.text}</div>         
-             </Timeline.Item>
-             </div>  
-            )
-            })
-        )
-      }
-    const Timelines = ()=>{
-      return(
-      <Timeline mode="alternate">
-         {Items(configs)}
-      </Timeline>
-      )      
-    }
+import Tlines from './timelines/index'
+import {RocketTwoTone } from '@ant-design/icons';
+import Icon from '../component/icon/index'
+import Music from "../component/music";
+const { Content, Footer } = Layout;
+
+const Homer = (props) => {
+    // eslint-disable-next-line no-unused-expressions
+    const {list,setSelected, loading,homeDispatch,detailDispatch} = props
+    useEffect(()=>{
+      homeDispatch.getApproveList();
+      setSelected(['1']);
+    },[homeDispatch, setSelected])
+   
+    const handleClick = (item) => {
+      props.history.push({pathname:'./detail/'+item.noteid,query:item});
+      detailDispatch.savenote({content:item.content});
+    };
+     
     const style ={
       height: 40,
       width: 40,
       lineHeight: '40px',
       borderRadius: 4,
       backgroundColor: '#1088e9',
-      color: '#fff',
+      color: 'red',
       textAlign: 'center',
-      fontSize: 14,
+      fontSize: 40,
     }
    return (
-     <>
-  <Layout style={{height:"200vh"}}>
-     <Header  style={{ position: 'fixed', zIndex: 1, width: '100%'}}>
+<div style={{width:'100vw'}}>
+   <Layout >
        <Nav ></Nav>
-     </Header>   
-    <Content className="site-layout"  >
-     <Swiper></Swiper> 
-     <div style={{ marginTop: '100px' }}>
-     <Timelines></Timelines>  
-     </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+       <Spin spinning={loading}  delay={300}>    
+           <Content className="site-layout"  >
+            <Swiper></Swiper> 
+            <Tlines handleClick ={handleClick} list = {list} loading = {loading}></Tlines>  
+           </Content>
+        </Spin>   
+
+    <Footer style={{ textAlign: 'center',height:"10vh" }}>
+        <a  href='https://beian.miit.gov.cn'>豫ICP备2021011660号</a>
+    </Footer> 
   </Layout>
+
+
    <BackTop visibilityHeight={0}>
-      <div style={style}><ArrowUpOutlined /></div>
+      <div style={style}><RocketTwoTone /></div>
    </BackTop>
-    </>
+   <Music></Music>
+   <Icon></Icon> 
+</div>
    )
 }
 
 const mapState = (state) => ({
-    count: state.home.count,
+    list:state.home.list,
+    loading:state.home.loading,
   });
   
   const mapDispatch = (dispatch) => ({
     homeDispatch: dispatch.home,
-    navDispatch: dispatch.common
+    detailDispatch: dispatch.detail,
+    setSelected: dispatch.common.setSelected,
     //确保刷新之后导航栏标签不跑偏
   });
   
-  const Home = connect(mapState, mapDispatch)(home);
+  const Home = connect(mapState, mapDispatch)(Homer);
   export default Home;

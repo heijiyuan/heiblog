@@ -16,7 +16,7 @@
   .timeline{
     display: inline-block;
     text-align:center;
-    width:40vw;
+    /* width:40vw; */
     cursor: pointer;
   }
   .timeline:hover{
@@ -26,4 +26,16 @@
     cursor: pointer;
     color: brown;
   }
- 
+ .icon_drawer{
+   position: fixed;
+   z-index: 100;
+   bottom:0px;
+   left: 100px;
+   height: 40px;
+   width: 40px;
+   line-height: '40px';
+   border-radius: 4;
+   background-color: '#1088e9';
+   color: '#fff';
+   text-align: 'center';
+ }

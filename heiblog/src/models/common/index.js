@@ -1,6 +1,7 @@
 const common = {
     state: {
-        select:['1'],
+        select:[],
+        navmode:'dark'
         //用于不同的页面默认选择项目
 
     }, // initial state
@@ -10,6 +11,12 @@ const common = {
         return {
             ...state,
             select:payload
+        }
+      },
+      setmode(state, payload) {
+        return {
+            ...state,
+            navmode:payload
         }
       }
     },

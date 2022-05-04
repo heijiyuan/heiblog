@@ -1,0 +1,47 @@
+.header{
+    background-color: #fff;
+
+    padding: .4rem;
+    overflow: hidden;
+    height: 2.8rem;
+    border-bottom:1px solid #ccc;
+}
+.header-logo{
+    color:#1e90ff;
+    font-size: 1.4rem;
+    text-align: left;
+
+}
+.header-txt{
+    font-size: 0.6rem;
+    color: #999;
+    display: inline-block;
+    padding-left: 0.3rem;
+}
+.ant-meu{
+    line-height: 2.6rem;
+
+}
+.ant-menu-item{
+    font-size:.7rem !important;
+    padding-left:1rem;
+    padding-right:1rem;
+
+}
+
+@media (max-width:1200px){
+   .menu{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+}
+@media (min-width:1200px){
+    .titlespan{
+        margin-left: 10vw;
+        margin-right:  50vw;
+    }
+    .switch{
+        margin-left: 5vw;
+    }
+}

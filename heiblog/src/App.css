@@ -2,4 +2,37 @@
   margin: 0;
   padding: 0;
 }
+body{
+  background-color: #f6f6f6;
+}
+.vintage1{
+  background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+  text-shadow: 5px -5px black, 4px -4px white;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+ }
+ .backgroundspeak{
+  background-image: url("https://pic.heiheiyun.top/backgroundspeak.png") ;
+  background-repeat: no-repeat; 
+  background-size:cover;
+ }
+ .backgroundaboutme{
+  background-image: url("https://pic.heiheiyun.top/aboutme.png") ;
+  background-repeat: no-repeat; 
+  background-size:cover;
+  
+ }
+ .poem{
+  white-space:pre-line;
+  font-family:'KaiTi';
+  display: inline-block;
+  width: 230px;
+  font-size: 25px;
+  line-height: 60px;
+  font-weight: 500;
+  margin: 20px  auto;
+  color: white;
+ }
+
 

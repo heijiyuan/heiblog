@@ -1,0 +1,19 @@
+.audio{
+    /* border-top: 100px solid white;
+    border-right: 100px solid transparent; */
+    clear:both;
+    display:block;
+    margin:auto;
+    margin-top: 15px;
+}
+.Musiheaderc{
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: white;
+}
+.player{
+    height: 450px;
+    background-color: rgb(42,43,43);
+    border-radius:10px;
+}
