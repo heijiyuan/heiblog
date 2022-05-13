@@ -9,9 +9,12 @@
 }
 .a{
     position: absolute;
+    display: flex;
+    justify-content: space-around;
     top: 200px;
-    left: calc(50% - 260px);
-    font: 900 100px '';
+    left: calc(50% - 25vw);
+    font: 900 8vw '';
+    width: 50vw;
     color: #333;
     cursor: pointer;
 }

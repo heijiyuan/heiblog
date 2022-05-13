@@ -1,6 +1,9 @@
- .layout{
+ .layout_top{
     height: 400px;
     margin-top: 50px;
+  }
+  .layout{
+    height:100vh
   }
   .head {
       height: 10vh;
@@ -11,13 +14,9 @@
     height: calc(100% - 64px);
     margin-top: 64px;
   }
-  .right{
-    width: 40vw;
-    background-color: rgb(244,245,245);
-  }
+
   .tag{
     text-align: center;
-    /* margin-top: 10px; */
   }
   .two_code{
     display: flex;
@@ -25,3 +24,45 @@
     align-items: center;
     margin-top: 20px;
   }
+  .backgroundaboutme{
+    background-image: url("https://pic.heiheiyun.top/aboutme.png") ;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    background-color:white;
+    display:flex;
+    justify-content:center;
+    width:70%;
+    height:90%;
+    border-radius:10px;
+    margin-top:12px;
+    margin-left:29%;
+   }
+   .right{
+     background-color: white;
+     display:flex;
+     align-items:center;
+     height:100%;
+     border-radius:10px;
+     margin-top:12px;
+     flex-direction:column;
+
+   }
+   @media (max-width:580px){
+   .leftcontent{
+    display: none;
+   }
+   .rightcontent{
+    background-color: rgb(244,245,245);
+  }
+   .right{
+     width: 100vw;
+   }
+ }
+ @media (min-width:580px){
+  .rightcontent{
+    background-color: rgb(244,245,245);
+    width: 100vw;
+    margin-right: 20vw;
+  }
+
+}

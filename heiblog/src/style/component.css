@@ -35,6 +35,10 @@
        justify-content: space-between;
        align-items: center;
    }
+   /* 这是自我介绍组件 */
+   .backgroundaboutme{
+     display: none;
+  }
 }
 @media (min-width:1200px){
     .titlespan{
@@ -44,4 +48,5 @@
     .switch{
         margin-left: 5vw;
     }
+    
 }

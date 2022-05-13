@@ -17,12 +17,7 @@ body{
   background-repeat: no-repeat; 
   background-size:cover;
  }
- .backgroundaboutme{
-  background-image: url("https://pic.heiheiyun.top/aboutme.png") ;
-  background-repeat: no-repeat; 
-  background-size:cover;
-  
- }
+
  .poem{
   white-space:pre-line;
   font-family:'KaiTi';
